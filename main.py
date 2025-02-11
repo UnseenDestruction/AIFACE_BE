@@ -40,7 +40,7 @@ async def generate_video(file: UploadFile = File(...)):
 
         subprocess.call([
             "python", "video.py", "--id", "May",
-            "--driving_audio", str(audio_path), "--device", "cpu"
+            "--driving_audio", str(audio_path), "--device", "cuda"
         ])
 
         avi_video_path = RESULTS_ROOT / user_id / f"{user_id}.avi"
